@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>task2</title>
+  <script>
+    function validate()
+     {
+      var phoneNumber = document.getElementById("phoneNumber").value
+      var password = document.getElementById("password").value
+      var phoneNumberCheck= /^\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})$/
+      var passwordCheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,6}$/ 
+      if (!phoneNumber.match(phoneNumberCheck)) 
+      {
+        alert("Please enter a valid American phone number")
+        return false
+      }
+      if (!password.match(passwordCheck)) 
+      {
+        alert("Password is invalid!")
+        return false
+      }
+      return true
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validate()">
+    <input  id="phoneNumber" placeholder="Enter your phno" ><br>
+    <input  id="password" placeholder="Enter your password"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
